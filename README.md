@@ -107,15 +107,21 @@ The app includes comprehensive **unit tests** for all major functionality:
 ## Project Structure
 ```bash
 /app
-/create -> Client component for creating events
-/event/[id] -> Server component for event details
-/page.tsx -> Home page (client component)
+  /api/events/route.ts -> API route handling event CRUD
+  /create/page.tsx -> Client component for creating events
+  /event/[id]/page.tsx -> Server component for event details
+  /page.tsx -> Home page (client component)
 /data
-events.json -> JSON file storing events
+  events.json -> JSON file storing events
 /types
-index.d.ts -> Type definitions
-/app/api/events
-route.ts -> API route handling event CRUD
+  index.d.ts -> Type definitions
+/lib/eventStore.ts -> Event store
+/components
+  EventDetailView.tsx -> Displays details of a single event
+  EventForm.tsx -> Create event form
+  EventList.tsx -> Event List
+  Providers.tsx -> MUI (Material-UI) with Emotion
+  SuccessAlert.tsx -> Success Alert after creation of a event
 ```
 
 ---
