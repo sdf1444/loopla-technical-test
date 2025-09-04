@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getEvents, addEvent } from '../../../lib/eventStore';
 import { Event } from '../../../types';
+import { v4 as uuidv4 } from 'uuid';
 
 interface EventRequestBody {
   title?: string;
@@ -38,7 +39,7 @@ export async function POST(req: Request) {
 
     // Construct new event object
     const newEvent: Event = {
-      id: String(Date.now()), // simple ID generation
+      id: uuidv4(),
       title: body.title,
       description: body.description || '',
       date: body.date,

@@ -31,8 +31,10 @@ export default function EventForm({ onSubmit }: EventFormProps) {
       return;
     }
 
-    // Title must end with an emoji
-    if (!/\p{Emoji}$/u.test(title)) {
+    // Matches one or more emojis at the end of the string
+    const emojiRegex = /\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu;
+
+    if (!title.match(emojiRegex)?.at(-1)) {
       setError('Title must end with at least one emoji');
       return;
     }
