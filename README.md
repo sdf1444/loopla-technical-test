@@ -105,7 +105,7 @@ The app includes comprehensive **unit tests** for all major functionality:
 ---
 
 ## Project Structure
-
+```bash
 /app
 /create -> Client component for creating events
 /event/[id] -> Server component for event details
@@ -116,6 +116,7 @@ events.json -> JSON file storing events
 index.d.ts -> Type definitions
 /app/api/events
 route.ts -> API route handling event CRUD
+```
 
 ---
 
