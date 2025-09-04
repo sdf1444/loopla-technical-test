@@ -133,7 +133,13 @@ npm run dev
 
 3. Open http://localhost:3000 in your browser.
 
---- 
+---
+
+## Running unit tests
+
+```bash
+npm test
+```
 
 ## Notes
 
